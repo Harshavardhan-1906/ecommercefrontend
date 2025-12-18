@@ -1,16 +1,43 @@
-# React + Vite
+# 🛒 College E-Commerce Store (MERN Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Full-Stack E-Commerce application built using MongoDB, Express.js, React, and Node.js. This project features user authentication, product management, a shopping cart, and a secure checkout process.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **User Authentication:** Secure Login and Registration using JWT (JSON Web Tokens) and Bcrypt for password hashing.
+* **Product Catalog:** Dynamic product display fetched from a MongoDB database.
+* **Shopping Cart:** Add and remove items from the cart with real-time total calculation.
+* **Checkout System:** Saves orders to the database and links them to the logged-in user.
+* **Protected Routes:** Users must be logged in to place orders.
+* **Persistent Login:** Keeps users logged in even after refreshing the page (using LocalStorage).
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React.js, React Router, Axios, Vite.
+* **Backend:** Node.js, Express.js.
+* **Database:** MongoDB (Mongoose ODM).
+* **Security:** JWT, Bcryptjs, CORS.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Installation & Setup
+
+### 1. Backend Setup (Server)
+Navigate to the backend folder and install dependencies:
+```bash
+cd backend
+npm install
+
+Create a .env file in the backend folder:
+
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/college-ecommerce
+JWT_SECRET=mysecretkey123
+
+
+🧪 API Endpoints
+
+GET	  |  /api/products   	|Fetch all products
+POST  |	/api/users/register	|Register a new user
+POST  |	/api/users/login	|Login user & get Token
+POST  |	/api/orders	        |Place a new order (Requires Login)
